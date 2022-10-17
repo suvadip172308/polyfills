@@ -1,7 +1,7 @@
 const radius = [5, 3, 2, 8];
 
 function area(radius) {
-  return radius * radius;
+  return Math.PI * radius * radius;
 }
 
 Array.prototype.calculate = function (logic) {
