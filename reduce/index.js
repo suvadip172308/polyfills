@@ -22,7 +22,7 @@ Array.prototype.polyReduce = function (logic, initialValue) {
   return acc;
 }
 
-function sum(acc, curr) {
+function filterOut(acc, curr) {
   if(curr.age < 30) {
     acc.push(curr.name);
   }
@@ -31,7 +31,7 @@ function sum(acc, curr) {
 }
 
 // This reduce call would act like a `filter`
-const res = persons.polyReduce(sum, []);
+const res = persons.polyReduce(filterOut, []);
 
 console.log(res);
 
