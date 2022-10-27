@@ -1,20 +1,20 @@
-const radius = [5, 3, 2, 8]; // Array Class object
+const radius = [5, 3, 2, 8];
 
-function square(number) {
-  return number * number;
+function area(radius) {
+  return Math.PI * radius * radius;
 }
 
-Array.prototype.polyMap = function (fn) {
+Array.prototype.calculate = function (logic) {
   const output = [];
 
   for(let i = 0; i < this.length; i++) {
-    output.push(fn(this[i]));
+    output.push(logic(this[i]));
   }
 
   return output;
 }
 
-const res = radius.polyMap(square);
+
+const res = radius.calculate(area);
 
 console.log(res);
-
