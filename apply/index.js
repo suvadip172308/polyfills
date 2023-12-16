@@ -7,9 +7,9 @@ const printName = function(hometown, state) {
   console.log(this.firstName + ' ' + this.lastName + ' from ' + hometown + ',' + state);
 }
 
-// Polyfill of "call"
+// Polyfill of "apply"
 
-Function.prototype.myCall = function(context, ...args) {
+Function.prototype.myApply = function(context, args) {
   currentContext  = context || globalThis;  // take provided context else glabal context
   let randomProp = Math.random();   // create a random number as prop
 
@@ -27,5 +27,6 @@ Function.prototype.myCall = function(context, ...args) {
   return result;
 }
 
-printName.call(person, 'chinsurah', 'west bengal');
-printName.myCall(person, 'chinsurah', 'west bengal');
+printName.apply(person, ['chinsurah', 'west bengal']);
+
+printName.myApply(person, ['chinsurah', 'west bengal']);
